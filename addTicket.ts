@@ -39,16 +39,16 @@ export async function addTicket(info: TicketInfo): Promise<void> {
                   ${info.pl_number}
                 );`;
 
-  // pool.query(query, (err, resp) => {
-  //   if (err) {
-  //     console.log(`error`);
-  //     console.log(err);
-  //   }
-  //   else {
-  //     console.log('success');
-  //     console.log(resp);
-  //   }
-  // });
+  pool.query(query, (err, resp) => {
+    if (err) {
+      console.log(`error`);
+      console.log(err);
+    }
+    else {
+      console.log('success');
+      console.log(resp);
+    }
+  });
 
-  // console.log(query);
+  console.log(query);
 }

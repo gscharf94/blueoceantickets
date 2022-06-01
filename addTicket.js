@@ -1,3 +1,4 @@
+import { pool } from './db.js';
 import { formatDatePostgresql, formatResponsesPostgresql } from './helperFunctions/formattingFunctions.js';
 /**
  * adds a single ticket into the database
@@ -33,15 +34,15 @@ export async function addTicket(info) {
                   '${info.description}',
                   ${info.pl_number}
                 );`;
-    // pool.query(query, (err, resp) => {
-    //   if (err) {
-    //     console.log(`error`);
-    //     console.log(err);
-    //   }
-    //   else {
-    //     console.log('success');
-    //     console.log(resp);
-    //   }
-    // });
-    // console.log(query);
+    pool.query(query, (err, resp) => {
+        if (err) {
+            console.log(`error`);
+            console.log(err);
+        }
+        else {
+            console.log('success');
+            console.log(resp);
+        }
+    });
+    console.log(query);
 }

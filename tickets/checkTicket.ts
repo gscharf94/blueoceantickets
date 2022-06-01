@@ -59,6 +59,11 @@ async function getResponses(page: puppeteer.Page): Promise<Response[]> {
     }
     return responses;
   });
+  for (const response of responses) {
+    for (const item in response) {
+      response[item] = escapeSingleQuote(response[item]);
+    }
+  }
 
   return responses;
 }
