@@ -1,0 +1,206 @@
+#mainContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 70% 30%;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+  align-items: center;
+}
+
+#map {
+  grid-column: 1 /span 2;
+  grid-row: 1;
+  height: 100%;
+  width: 100%;
+
+
+  display: none;
+}
+
+#leftControlContainer {
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 100%;
+  height: 100%;
+}
+
+#rightControlContainer {
+  grid-column: 2;
+  grid-row: 2;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  color: white;
+}
+
+#ticketInput {
+  grid-row: 1;
+  grid-column: 1 / span 3;
+  width: 100%;
+}
+
+
+#addTicketButton {
+  grid-row: 1;
+  grid-column: 4;
+  height: 100%;
+}
+
+#addTicketPopup {
+  display: none;
+}
+
+.show {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+
+#addTicketPopup {
+  display: none;
+  background-color: white;
+  position: absolute;
+  justify-items: center;
+  align-items: center;
+  width: 80%;
+  height: 70%;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#exitButton {
+  align-self: top;
+  color: black;
+  font-size: 4ch;
+  font-weight: bold;
+  grid-column: 5;
+  grid-row: 1;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.popupInput {
+  width: 85%;
+  font-size: 1.5ch;
+  font-family: "Fira Mono", monospace;
+}
+
+.popupLabel {
+  font-size: 1.5ch;
+  justify-self: left;
+  font-family: "Fira Mono", monospace;
+}
+
+#cityInput {
+  grid-column: 1 /span 4;
+  grid-row: 2;
+}
+
+#cityLabel {
+  grid-column: 5;
+  grid-row: 2;
+}
+
+#streetInput {
+  grid-column: 1 /span 4;
+  grid-row: 3;
+}
+
+#streetLabel {
+  grid-column: 5;
+  grid-row: 3;
+}
+
+#crossStreetInput {
+  grid-column: 1 /span 4;
+  grid-row: 4;
+}
+
+#crossStreetLabel {
+  grid-column: 5;
+  grid-row: 4;
+}
+
+#ticketHeaderPopup {
+  grid-column: 1 /span 4;
+  grid-row: 1;
+  font-size: 3ch;
+  color: black;
+  font-family: "Fira Mono", monospace;
+}
+
+#descriptionInput {
+  grid-column: 1 /span 4;
+  grid-row: 3 /span 5;
+  width: 85%;
+  font-size: 1.5ch;
+  font-family: "Fira Mono", monospace;
+}
+
+#descriptionLabel {
+  grid-column: 5;
+  grid-row: 5;
+  grid-row: 3 /span 5;
+  font-family: "Fira Mono", monospace;
+}
+
+#inputDateInput {
+  grid-column: 1 /span 3;
+  grid-row: 7;
+  width: 60%;
+  font-size: 1.5ch;
+  font-family: "Fira Mono", monospace;
+  text-align: center;
+}
+
+#inputDateLabel {
+  grid-column: 1 /span 3;
+  grid-row: 6;
+  align-self: flex-end;
+  font-size: 1.5ch;
+  font-family: "Fira Mono", monospace;
+}
+
+#expirationDateInput {
+  width: 60%;
+  grid-column: 3 /span 5;
+  grid-row: 7;
+  font-size: 1.5ch;
+  font-family: "Fira Mono", monospace;
+  text-align: center;
+}
+
+#expirationDateLabel {
+  grid-column: 3 /span 5;
+  align-self: flex-end;
+  grid-row: 6;
+  font-size: 1.5ch;
+  font-family: "Fira Mono", monospace;
+}
+
+#confirmPopupButton {
+  grid-column: 3 /span 5;
+  grid-row: 8 /span 10;
+  background-color: green;
+  color: white;
+  font-size: 3ch;
+  font-weight: bold;
+}
+
+#cancelPopupButton {
+  grid-column: 1 /span 3;
+  grid-row: 8 /span 10;
+  background-color: red;
+  color: white;
+  font-size: 3ch;
+  font-weight: bold;
+}
