@@ -5,7 +5,8 @@
   "type": "module",
   "main": "entryPoint.js",
   "scripts": {
-    "start": "node output/entryPoint.js"
+    "start": "node output/entryPoint.js",
+    "watch": "tsc-watch --onSuccess 'node updatePublicScripts.js'"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "jade": "^1.11.0",
     "pg": "^8.7.3",
     "pug": "^3.0.2",
-    "puppeteer": "^14.1.1"
+    "puppeteer": "^14.1.1",
+    "tsc-watch": "^5.0.3"
   }
 }

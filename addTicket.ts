@@ -2,6 +2,8 @@ import { pool } from './db.js';
 import { Response, TicketInfo } from './typesInterfaces';
 import { formatDatePostgresql, formatResponsesPostgresql } from './helperFunctions/formattingFunctions.js';
 
+// add comment
+
 /**
  * adds a single ticket into the database
  * @param {TicketInfo} info - this includes all the information gotten from

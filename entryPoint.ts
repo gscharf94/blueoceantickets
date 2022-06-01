@@ -2,6 +2,7 @@ import path from 'path';
 import express from 'express';
 
 import { router as mainPage } from './routes/mainPage.js';
+import { router as viewJob } from './routes/viewJob.js';
 
 const app = express();
 const PORT = 3000;
@@ -18,6 +19,8 @@ app.use(express.urlencoded({
 }));
 
 app.use('/', mainPage);
+app.use('/job', viewJob);
+// delet
 
 
 
