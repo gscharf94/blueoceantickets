@@ -96,7 +96,8 @@ function parseTicketText(text) {
  */
 export async function getTicketInfo(ticketNumber) {
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
+        slowMo: 100,
     });
     const page = await browser.newPage();
     await page.goto(URL);

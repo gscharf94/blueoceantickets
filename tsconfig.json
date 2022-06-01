@@ -2,13 +2,14 @@
   "compilerOptions": {
     "target": "es2022",
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "outDir": "./output"
   },
   "include": [
     "**/*",
   ],
   "exclude": [
     "node_modules",
-    "typesInterfaces.ts"
+    "./typesInterfaces.ts"
   ]
 }

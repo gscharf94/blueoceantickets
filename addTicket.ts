@@ -41,14 +41,12 @@ export async function addTicket(info: TicketInfo): Promise<void> {
 
   pool.query(query, (err, resp) => {
     if (err) {
-      console.log(`error`);
+      console.log(`error adding ticket: ${info.ticket_number}`);
       console.log(err);
     }
     else {
-      console.log('success');
+      console.log(`success adding ticket: ${info.ticket_number}`);
       console.log(resp);
     }
   });
-
-  console.log(query);
 }

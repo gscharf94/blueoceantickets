@@ -5,7 +5,7 @@
   "type": "module",
   "main": "entryPoint.js",
   "scripts": {
-    "start": "node entryPoint.js"
+    "start": "node output/entryPoint.js"
   },
   "author": "",
   "license": "ISC",
