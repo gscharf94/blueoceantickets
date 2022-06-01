@@ -114,6 +114,7 @@ export async function getTicketInfo(ticketNumber) {
     let ticketText = await page.$eval(ticketTextSelector, el => el.textContent);
     let parsedText = parseTicketText(ticketText);
     const responses = await getResponses(page);
+    browser.close();
     return {
         ticket_number: parsedText.ticket_number,
         city: parsedText.city,
