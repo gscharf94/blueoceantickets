@@ -1,37 +1,10 @@
 import puppeteer from 'puppeteer';
+import { Response, TicketInfo } from '../typesInterfaces';
 
 const PHONENUMBER = "7816584401";
 const URL = "https://exactix.sunshine811.com/findTicketByNumberAndPhone";
 
 
-type Position = {
-  lat: number,
-  lng: number,
-}
-
-type Response = {
-  utility_name: string,
-  utility_type: string,
-  response: string,
-  contact: string,
-  alternate_contact: string,
-  emergency_contact: string,
-  notes: string,
-}
-
-interface TicketInfo {
-  ticket_number: string,
-  city: string,
-  street: string,
-  cross_street: string,
-  input_date: Date,
-  expiration_date: Date,
-  job_name: string,
-  pl_number: number,
-  description: string,
-  responses: Response[],
-  coordinates?: Position[],
-}
 
 /**
  * regex for description results in ugliness
