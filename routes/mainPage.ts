@@ -3,5 +3,9 @@ import { pool } from "../db.js";
 
 export const router = express.Router();
 router.get('/', (req, res) => {
-  res.render('mainPage', { title: "hello world" });
+  (async () => {
+    let query = await pool.query('SELECT * FROM jobs');
+    let jobs = query.rows;
+    res.render('mainPage', { jobs: jobs });
+  })();
 });

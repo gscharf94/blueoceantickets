@@ -1,4 +1,8 @@
-/* h1 {
-  font-size: 5ch;
-  font-family: 'Roboto Bold';
-} */
+#mainContainer {
+  display: grid;
+}
+
+a {
+  color: white;
+  font-size: 3ch;
+}

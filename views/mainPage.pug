@@ -4,7 +4,9 @@ block style
   link(rel="stylesheet", href="/stylesheets/mainPage.css")
 
 block content
-  h1 #{title}
+  div#mainContainer
+    each job in jobs
+      a(href=`/job/${job.job_name}`) #{job.job_name} - #{job.job_description}
 
 
 block scripts
