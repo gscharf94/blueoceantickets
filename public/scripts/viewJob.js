@@ -14,14 +14,14 @@ function toggleTicketPopup() {
 /**
  * takes a date str that was a date object before
  * turns that into a date, and formats it into
- * "MM/DD/YYYY" in order to be inserted into input (type="date")
+ * "YYYY-MM-DD" in order to be inserted into input (type="date")
  */
 function formatDate(date) {
     date = new Date(date);
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
     let day = date.getDate();
-    return `${String(month).padStart(2, "0")}/${String(day).padStart(2, "0")}/${year}`;
+    return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 }
 /**
  * displays the popup and fills it with information about specific ticket
@@ -32,7 +32,6 @@ function addTicket() {
     toggleTicketPopup();
     const fillTicketInfo = (resp) => {
         let info = JSON.parse(JSON.parse(resp));
-        console.log(info);
         let numberHeader = document.getElementById('ticketHeaderPopup');
         let cityInput = document.getElementById('cityInput');
         let streetInput = document.getElementById('streetInput');
