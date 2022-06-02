@@ -31,14 +31,16 @@ function formatDate(date) {
 function addTicket() {
     toggleTicketPopup();
     const fillTicketInfo = (resp) => {
-        let info = JSON.parse(resp);
+        let info = JSON.parse(JSON.parse(resp));
         console.log(info);
+        let numberHeader = document.getElementById('ticketHeaderPopup');
         let cityInput = document.getElementById('cityInput');
         let streetInput = document.getElementById('streetInput');
         let crossStreetInput = document.getElementById('crossStreetInput');
         let descriptionInput = document.getElementById('descriptionInput');
         let inputDateInput = document.getElementById('inputDateInput');
         let expirationDateInput = document.getElementById('expirationDateInput');
+        numberHeader.textContent = info.ticket_number;
         cityInput.value = info.city;
         streetInput.value = info.street;
         crossStreetInput.value = info.cross_street;

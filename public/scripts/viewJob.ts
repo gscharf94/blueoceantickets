@@ -65,10 +65,10 @@ function formatDate(date: Date): string {
 function addTicket(): void {
   toggleTicketPopup();
   const fillTicketInfo = (resp: string): void => {
-    let info: TicketInfo = JSON.parse(resp);
+    let info: TicketInfo = JSON.parse(JSON.parse(resp));
     console.log(info);
 
-
+    let numberHeader = document.getElementById('ticketHeaderPopup');
     let cityInput = <HTMLInputElement>document.getElementById('cityInput');
     let streetInput = <HTMLInputElement>document.getElementById('streetInput');
     let crossStreetInput = <HTMLInputElement>document.getElementById('crossStreetInput');
@@ -76,6 +76,7 @@ function addTicket(): void {
     let inputDateInput = <HTMLInputElement>document.getElementById('inputDateInput');
     let expirationDateInput = <HTMLInputElement>document.getElementById('expirationDateInput');
 
+    numberHeader.textContent = info.ticket_number
     cityInput.value = info.city;
     streetInput.value = info.street;
     crossStreetInput.value = info.cross_street;

@@ -1,7 +1,6 @@
 import { getTicketInfo } from "./tickets/checkTicket.js";
 import { addTicket } from "./addTicket.js";
 
-
 const ticketNumber = "143204143";
 
 
@@ -9,6 +8,6 @@ const ticketNumber = "143204143";
   let info = await getTicketInfo(ticketNumber);
   console.log(info);
 
-  addTicket(info);
+  // addTicket(info);
 })();
 
