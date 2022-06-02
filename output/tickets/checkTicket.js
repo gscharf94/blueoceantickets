@@ -8,8 +8,8 @@ const URL = "https://exactix.sunshine811.com/findTicketByNumberAndPhone";
  */
 function trimDescription(description) {
     description = description.slice(0, -2);
-    description = description.replaceAll("\n", " ");
-    description = description.replaceAll("'", "''");
+    description = description.replace(/\n/g, " ");
+    description = description.replace(/'/g, "''");
     return description;
 }
 /**
@@ -19,7 +19,7 @@ function trimDescription(description) {
  * @param {string} txt - arbritary string to escape single quote
  */
 function escapeSingleQuote(txt) {
-    return txt.replaceAll("'", "''");
+    return txt.replace(/'/g, "''");
 }
 /**
  * page should be set to view a current ticket. it will go through the table of responses

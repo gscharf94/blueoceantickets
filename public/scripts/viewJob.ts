@@ -1,5 +1,31 @@
-import { TicketInfo } from '../../typesInterfaces';
-import * as L from 'leaflet';
+type Position = {
+  lat: number,
+  lng: number,
+}
+
+type TicketResponse = {
+  utility_name: string,
+  utility_type: string,
+  response: string,
+  contact: string,
+  alternate_contact: string,
+  emergency_contact: string,
+  notes: string,
+}
+
+interface TicketInfo {
+  ticket_number: string,
+  city: string,
+  street: string,
+  cross_street: string,
+  input_date: Date,
+  expiration_date: Date,
+  job_name: string,
+  pl_number: number,
+  description: string,
+  responses: Response[],
+  coordinates?: Position[],
+}
 
 let map = L.map('map').setView([28.54, -81.391], 8);
 
@@ -16,6 +42,7 @@ function toggleTicketPopup(): void {
   let popup = document.getElementById('addTicketPopup');
   popup.classList.toggle("show");
 }
+
 
 /**
  * takes a date str that was a date object before

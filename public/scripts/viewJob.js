@@ -1,7 +1,4 @@
-"use strict";
-exports.__esModule = true;
-var L = require("leaflet");
-var map = L.map('map').setView([28.54, -81.391], 8);
+let map = L.map('map').setView([28.54, -81.391], 8);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'BLUEOCEAN',
     maxZoom: 18,
@@ -11,7 +8,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoiZ3NjaGFyZjk0IiwiYSI6ImNreWd2am9mODBjbnMyb29sNjZ2Mnd1OW4ifQ.1cSadM_VR54gigTAsVVGng'
 }).addTo(map);
 function toggleTicketPopup() {
-    var popup = document.getElementById('addTicketPopup');
+    let popup = document.getElementById('addTicketPopup');
     popup.classList.toggle("show");
 }
 /**
@@ -21,10 +18,10 @@ function toggleTicketPopup() {
  */
 function formatDate(date) {
     date = new Date(date);
-    var month = date.getMonth() + 1;
-    var year = date.getFullYear();
-    var day = date.getDate();
-    return "".concat(String(month).padStart(2, "0"), "/").concat(String(day).padStart(2, "0"), "/").concat(year);
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    let day = date.getDate();
+    return `${String(month).padStart(2, "0")}/${String(day).padStart(2, "0")}/${year}`;
 }
 /**
  * displays the popup and fills it with information about specific ticket
@@ -33,15 +30,15 @@ function formatDate(date) {
  */
 function addTicket() {
     toggleTicketPopup();
-    var fillTicketInfo = function (resp) {
-        var info = JSON.parse(resp);
+    const fillTicketInfo = (resp) => {
+        let info = JSON.parse(resp);
         console.log(info);
-        var cityInput = document.getElementById('cityInput');
-        var streetInput = document.getElementById('streetInput');
-        var crossStreetInput = document.getElementById('crossStreetInput');
-        var descriptionInput = document.getElementById('descriptionInput');
-        var inputDateInput = document.getElementById('inputDateInput');
-        var expirationDateInput = document.getElementById('expirationDateInput');
+        let cityInput = document.getElementById('cityInput');
+        let streetInput = document.getElementById('streetInput');
+        let crossStreetInput = document.getElementById('crossStreetInput');
+        let descriptionInput = document.getElementById('descriptionInput');
+        let inputDateInput = document.getElementById('inputDateInput');
+        let expirationDateInput = document.getElementById('expirationDateInput');
         cityInput.value = info.city;
         streetInput.value = info.street;
         crossStreetInput.value = info.cross_street;
@@ -58,8 +55,8 @@ function addTicket() {
  * @param {(string) => void} callback - callback function that does something with response
  */
 function sendPost(url, body, callback) {
-    var req = new XMLHttpRequest();
-    req.open("POST", "http://192.168.86.36:3000/".concat(url));
+    let req = new XMLHttpRequest();
+    req.open("POST", `http://192.168.86.36:3000/${url}`);
     req.setRequestHeader('Content-Type', 'application/json');
     req.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {

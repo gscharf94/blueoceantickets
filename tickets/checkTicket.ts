@@ -13,8 +13,8 @@ const URL = "https://exactix.sunshine811.com/findTicketByNumberAndPhone";
  */
 function trimDescription(description: string): string {
   description = description.slice(0, -2);
-  description = description.replaceAll("\n", " ");
-  description = description.replaceAll("'", "''");
+  description = description.replace(/\n/g, " ");
+  description = description.replace(/'/g, "''");
   return description;
 }
 
@@ -25,7 +25,7 @@ function trimDescription(description: string): string {
  * @param {string} txt - arbritary string to escape single quote
  */
 function escapeSingleQuote(txt: string): string {
-  return txt.replaceAll("'", "''");
+  return txt.replace(/'/g, "''");
 }
 
 /**

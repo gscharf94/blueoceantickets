@@ -1,4 +1,3 @@
-import * as L from 'leaflet';
 let map = L.map('map').setView([28.54, -81.391], 8);
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
     attribution: 'BLUEOCEAN',

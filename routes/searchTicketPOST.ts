@@ -11,6 +11,8 @@ router.post('/', (req, res, next) => {
 
   (async () => {
     let ticketInfo = await getTicketInfo(ticketNumber);
+    console.log(`got ticket info for ${ticketNumber}`);
+    console.log(ticketNumber);
     res.json(JSON.stringify(ticketInfo));
   })();
 });
