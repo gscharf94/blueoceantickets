@@ -15,16 +15,16 @@ type TicketResponse = {
 
 interface TicketInfo {
   ticket_number: string,
-  city: string,
-  street: string,
-  cross_street: string,
-  input_date: Date,
-  expiration_date: Date,
-  job_name: string,
-  pl_number: number,
-  description: string,
-  responses: Response[],
-  coordinates?: Position[],
+    city: string,
+    street: string,
+    cross_street: string,
+    input_date: Date,
+    expiration_date: Date,
+    job_name: string,
+    pl_number: number,
+    description: string,
+    responses: Response[],
+    coordinates?: Position[],
 }
 
 let map = L.map('map').setView([28.54, -81.391], 8);
@@ -56,6 +56,7 @@ function formatDate(date: Date): string {
   let day = date.getDate();
   return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`
 }
+
 
 /**
  * displays the popup and fills it with information about specific ticket
@@ -95,7 +96,7 @@ function addTicket(): void {
  */
 function sendPost(url: string, body: {}, callback: (resp: string) => void) {
   let req = new XMLHttpRequest();
-  req.open("POST", `http://192.168.86.36:3000/${url}`);
+  req.open("POST", `http://192.168.43.248:3000/${url}`);
   req.setRequestHeader('Content-Type', 'application/json');
   req.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {

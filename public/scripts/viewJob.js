@@ -57,7 +57,7 @@ function addTicket() {
  */
 function sendPost(url, body, callback) {
     let req = new XMLHttpRequest();
-    req.open("POST", `http://192.168.86.36:3000/${url}`);
+    req.open("POST", `http://192.168.43.248:3000/${url}`);
     req.setRequestHeader('Content-Type', 'application/json');
     req.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
